@@ -4,15 +4,184 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#40958D"
+    android:layout_gravity="center"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:background="@drawable/index"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_margin="20dp"
+            android:padding="4dp"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="2dp"
+            android:text="Akpobome Oke Kelvin"
+            android:textAlignment="center"
+            android:textColor="#8E24AA"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Mobile Developer"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="I'm warmed of mobile technology."
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Ideas maker, curious and nature lover."
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/link"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        style="?android:attr/borderlessButtonStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.374"
+        android:background="@drawable/linkedin"/>
+
+    <Button
+        android:id="@+id/twit"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/twitter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.374" />
+
+    <Button
+        android:id="@+id/face"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/facebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.374" />
+
+    <Button
+        android:id="@+id/what"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/whatsapp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <Button
+        android:id="@+id/disq"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/disqus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <Button
+        android:id="@+id/bado"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/badoo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <Button
+        android:id="@+id/tele"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/telegram"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.816" />
+
+    <Button
+        android:id="@+id/blog"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/blogger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.816" />
+
+    <Button
+        android:id="@+id/yout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""
+        android:background="@drawable/youtube"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.816" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
