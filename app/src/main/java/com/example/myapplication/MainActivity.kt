@@ -1,11 +1,14 @@
 package com.example.myapplication
 
 import android.app.PendingIntent.getActivity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,9 +17,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main);
+
+
+
+       button3.setOnClickListener {
+           val intent = Intent(this, Main2Activity::class.java)
+           startActivity(intent)
+       }
+
 
 
         Log.d("OnCreate", "The activity is in onCreate state")
@@ -25,25 +39,6 @@ class MainActivity : AppCompatActivity() {
         //setting listeners
 
 
-        face.setOnClickListener {
-            val fbIntent: Intent= try {
-                // Check if FB app is even installed
-                this.packageManager.getPackageInfo("com.facebook.katana", 0)
-                val facebookScheme = "fb://page/"
-                Intent(Intent.ACTION_VIEW, Uri.parse(facebookScheme))
-            } catch (e: Exception) {
-
-                // Cache and Open a url in browser
-                val facebookProfileUri = "https://www.facebook.com/phildubem"
-                Intent(Intent.ACTION_VIEW, Uri.parse(facebookProfileUri))
-            }
-
-            //verifies intent would resolve to at least one activity
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(Intent.createChooser(fbIntent, "Open With"))
-
-            }
-        }
 
 
         what.setOnClickListener {
@@ -88,26 +83,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        twit.setOnClickListener {
-
-            val twIntent: Intent= try {
-                // Check if Twitter app is even installed
-                this.packageManager.getPackageInfo("com.twitter.android", 0)
-                Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=phildubem"))
-            } catch (e: Exception) {
-
-                val tProfileUri = "https://www.twitter.com/phildubem"
-                Intent(Intent.ACTION_VIEW, Uri.parse(tProfileUri))
-            }
-
-            //verifies intent would resolve to at least one activity
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(Intent.createChooser(twIntent, "Open With"))
-
-            }
-
-        }
-
 
 
 
@@ -141,7 +116,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
-        super.onResume()
+        val sharedPref = getSharedPreferences(Main2Activity.USER_SHARED_PREF, Context.MODE_PRIVATE)
+        val email = sharedPref.getString(Main2Activity.EMAIL, "N/A")
+        textView2.text = email
+            super.onResume()
 
         Log.d("OnResume", "The activity is in onResume state")
     }
@@ -169,7 +147,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("onRestart", "The activity is in onRestart state")
     }
-
 
 
 }
